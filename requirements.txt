@@ -1,1 +1,4 @@
+%%writefile requirements.txt
 streamlit
+rich
+requests
