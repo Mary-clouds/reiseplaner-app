@@ -1,7 +1,5 @@
-%%writefile app.py
 import streamlit as st
 import requests
-from rich.markdown import Markdown
 from rich.console import Console
 
 console = Console()
@@ -34,7 +32,7 @@ def generate_itinerary(origin, destination, duration):
     api_key = "1b3cfb66ad014a3fo55df2e890f445t9"
     api_url = f"https://api.shecodes.io/ai/v1/generate?prompt={prompt}&context={context}&key={api_key}"
 
-    response = requests.get(api_url)
+    response = requests.get(api_url, timeout=10)
     response_data = response.json()
 
     # Display in Streamlit
